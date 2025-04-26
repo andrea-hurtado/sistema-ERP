@@ -47,16 +47,4 @@ public class Proveedor {
                 ", telefono='" + telefono + '\'' +
                 '}';
     }
-    //Registrar proveedor
-    public void registrar(){
-        System.out.printf("Proveedor "+ nombre+ " con ID "+id);
-    }
-    //Actualizar datos de el proveedor
-    public void actualizar(){
-        System.out.printf("Proveedor "+ nombre+ "actualizado");
-    }
-    //Eliminar proveedor
-    public void eliminar(){
-        System.out.printf("Proveedor "+ nombre+ "eliminado");
-    }
 }

@@ -62,13 +62,4 @@ public class Producto {
                 ", idProveedor=" + idProveedor +
                 '}';
     }
-    public void registrar(){
-        System.out.printf("Producto "+ nombre+ " con ID "+id);
-    }
-    public void actualizar(){
-        System.out.printf("Producto "+ nombre+ "actualizado");
-    }
-    public void eliminar(){
-        System.out.printf("Producto "+ nombre+ "eliminado");
-    }
 }

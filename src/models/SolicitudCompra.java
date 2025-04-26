@@ -2,7 +2,7 @@ package models;
 
 import Enums.Estado;
 
-public class SolicitudCompra extends Calculable {
+public class SolicitudCompra {
     private int id;
     private int idProveedor;
     private int idProducto;
@@ -11,14 +11,14 @@ public class SolicitudCompra extends Calculable {
     private Estado estado;
     private double total;
 
-    public SolicitudCompra(int id, int idProveedor, int idProducto, int cantidad, double precioUnitario, Estado estado, double total) {
+    public SolicitudCompra(int id, int idProveedor, int idProducto, int cantidad, double precioUnitario, Estado estado) {
         this.id = id;
         this.idProveedor = idProveedor;
         this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
         this.estado = estado;
-        this.total = total;
+        this.total = calcular(); // Calcula el total al crear el objeto
     }
 
     public int getId() {
@@ -68,6 +68,7 @@ public class SolicitudCompra extends Calculable {
     public void setEstado(Estado estado) {
         this.estado = estado;
     }
+
     public double getTotal() {
         return total;
     }
@@ -88,22 +89,8 @@ public class SolicitudCompra extends Calculable {
                 ", total=" + total +
                 '}';
     }
-    public void calcularTotal() {
-        this.total = calcular();
-        System.out.printf("Total de la solicitud de compra es: " + this.total);
-    }
 
-    public void registrar(){
-        System.out.printf("Solicitud de compra registrada con ID:"+id);
+    public double calcular() {
+        return this.precioUnitario * this.cantidad;
     }
-    public void actualizarEstado(){
-        System.out.printf("Solicitud de compra actualizada"+estado);
-    }
-    public void eliminar(){
-        System.out.printf("Solicitud de compra eliminada con ID:"+id);
-    }
-        @Override
-        public double calcular() {
-            return this.precioUnitario * this.cantidad;
-        }
-    }
+}
