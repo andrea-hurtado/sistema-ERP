@@ -1,4 +1,5 @@
 package models;
 
-public class Calculable {
+public abstract class Calculable {
+    public abstract double calcular();
 }
