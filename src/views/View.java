@@ -1,4 +1,5 @@
 package views;
+import models.Producto;
 import models.Proveedor;
 
 public class View {
@@ -21,6 +22,19 @@ public class View {
     }
 
     public void mostrarProveedor(Proveedor proveedor) {
-        System.out.println(proveedor.toString());
+        System.out.println("Proveedor: ");
+        System.out.println("ID: " + proveedor.getId());
+        System.out.println("Nombre: " + proveedor.getNombre());
+        System.out.println("Dirección: " + proveedor.getDireccion());
+        System.out.println("Teléfono: " + proveedor.getTelefono());
+    }
+
+    public void mostrarProducto(Producto producto) {
+        System.out.println("Producto: ");
+        System.out.println("ID: " + producto.getId());
+        System.out.println("Nombre: " + producto.getNombre());
+        System.out.println("Precio unitario: " + producto.getPrecioUnitario());
+        System.out.println("Cantidad en stock: " + producto.getCantidadStock());
+        System.out.println("ID Proveedor: " + producto.getIdProveedor());
     }
 }

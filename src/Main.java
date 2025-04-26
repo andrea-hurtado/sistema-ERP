@@ -53,6 +53,13 @@ public class Main {
                     Estado estadoSolicitud = Estado.valueOf(estadoSolicitudString.toUpperCase());
                     controller.registrarSolicitudCompra(idProveedorSolicitud, idProductoSolicitud, cantidadSolicitud, precioUnitarioSolicitud, estadoSolicitud);
                     break;
+                case 4:
+                    controller.mostrarProveedores();
+                    break;
+
+                case 5:
+                    controller.mostrarProductos();
+                    break;
                 default:
                     System.out.println("Opción no válida.");
                     break;
