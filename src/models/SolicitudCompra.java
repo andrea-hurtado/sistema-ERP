@@ -1,8 +1,8 @@
 package models;
 
-import Enums.Estado;
+import Enums.Estado; //Aprobar o rechazar estado
 
-public class SolicitudCompra {
+public class SolicitudCompra implements OperacionSolicitud{
     private int id;
     private int idProveedor;
     private int idProducto;
@@ -93,4 +93,20 @@ public class SolicitudCompra {
     public double calcular() {
         return this.precioUnitario * this.cantidad;
     }
+
+    @Override
+    public double calcularTotal() {
+        return cantidad * precioUnitario;
+    }
+
+    @Override
+    public void aprobar() {
+        estado = Estado.TERMINADA;
+    }
+
+    @Override
+    public void rechazar() {
+        estado = Estado.CANCELADA;
+    }
+
 }
