@@ -10,6 +10,7 @@ public class Main {
         Controller controller = new Controller(view);
         Scanner scanner = new Scanner(System.in);
 
+
         int opcion = 0;
 
         while (opcion != 7) {
