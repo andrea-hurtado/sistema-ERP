@@ -21,14 +21,16 @@ public class View {
         System.out.println("Seleccione una opción: ");
     }
 
+    // Mostrar información de Proveedor (heredando de Persona)
     public void mostrarProveedor(Proveedor proveedor) {
         System.out.println("Proveedor: ");
         System.out.println("ID: " + proveedor.getId());
-        System.out.println("Nombre: " + proveedor.getNombre());
-        System.out.println("Dirección: " + proveedor.getDireccion());
-        System.out.println("Teléfono: " + proveedor.getTelefono());
+        System.out.println("Nombre: " + proveedor.getNombre());  // Se accede a través de herencia
+        System.out.println("Dirección: " + proveedor.getDireccion()); // Se accede a través de herencia
+        System.out.println("Teléfono: " + proveedor.getTelefono()); // Se accede a través de herencia
     }
 
+    // Mostrar Producto (sin cambios)
     public void mostrarProducto(Producto producto) {
         System.out.println("Producto: ");
         System.out.println("ID: " + producto.getId());

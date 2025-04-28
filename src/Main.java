@@ -61,10 +61,6 @@
                     case 5:
                         controller.mostrarProductos();
                         break;
-                    default:
-                        System.out.println("Opción no válida.");
-                        break;
-
                     case 6:
                         controller.mostrarSolicitudesCompra();
                         break;

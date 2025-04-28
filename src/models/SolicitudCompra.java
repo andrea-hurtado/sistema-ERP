@@ -1,9 +1,9 @@
 package models;
 
-import Enums.Estado; //Aprobar o rechazar estado
+import Enums.Estado;
 
-public class SolicitudCompra implements OperacionSolicitud{
-    private int id;
+public class SolicitudCompra implements OperacionSolicitud {
+    private int numeroSolicitud; // Atributo numeroSolicitud
     private int idProveedor;
     private int idProducto;
     private int cantidad;
@@ -11,8 +11,8 @@ public class SolicitudCompra implements OperacionSolicitud{
     private Estado estado;
     private double total;
 
-    public SolicitudCompra(int id, int idProveedor, int idProducto, int cantidad, double precioUnitario, Estado estado) {
-        this.id = id;
+    public SolicitudCompra(int numeroSolicitud, int idProveedor, int idProducto, int cantidad, double precioUnitario, Estado estado) {
+        this.numeroSolicitud = numeroSolicitud;
         this.idProveedor = idProveedor;
         this.idProducto = idProducto;
         this.cantidad = cantidad;
@@ -21,12 +21,12 @@ public class SolicitudCompra implements OperacionSolicitud{
         this.total = calcular(); // Calcula el total al crear el objeto
     }
 
-    public int getId() {
-        return id;
+    public int getNumeroSolicitud() {
+        return numeroSolicitud;  // Aquí estamos devolviendo el número de solicitud
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNumeroSolicitud(int numeroSolicitud) {
+        this.numeroSolicitud = numeroSolicitud;
     }
 
     public int getIdProveedor() {
@@ -80,7 +80,7 @@ public class SolicitudCompra implements OperacionSolicitud{
     @Override
     public String toString() {
         return "SolicitudCompra{" +
-                "id=" + id +
+                "numeroSolicitud=" + numeroSolicitud +
                 ", idProveedor=" + idProveedor +
                 ", idProducto=" + idProducto +
                 ", cantidad=" + cantidad +
@@ -108,5 +108,4 @@ public class SolicitudCompra implements OperacionSolicitud{
     public void rechazar() {
         estado = Estado.CANCELADA;
     }
-
 }

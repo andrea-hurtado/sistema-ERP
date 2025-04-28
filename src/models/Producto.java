@@ -2,7 +2,6 @@ package models;
 
 public class Producto {
     private int id;
-
     private String nombre;
     private double precioUnitario;
     private int cantidadStock;
@@ -64,5 +63,3 @@ public class Producto {
                 '}';
     }
 }
-
-

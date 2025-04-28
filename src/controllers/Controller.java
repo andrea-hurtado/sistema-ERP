@@ -3,20 +3,20 @@ package controllers;
 import models.Producto;
 import models.Proveedor;
 import models.SolicitudCompra;
+import views.View;
 import Enums.Estado;
 
 import java.util.ArrayList;
 
 public class Controller {
+    private View view;
     private ArrayList<Proveedor> proveedores = new ArrayList<>();
     private ArrayList<Producto> productos = new ArrayList<>();
     private ArrayList<SolicitudCompra> solicitudesCompra = new ArrayList<>();
 
-    // Constructor sencillo
-    public Controller() {
+    public Controller(View view) {
+        this.view = view;
     }
-
-    // Métodos básicos para tu Main:
 
     public void registrarProveedor(int id, String nombre, String direccion, String telefono) {
         Proveedor proveedor = new Proveedor(id, nombre, direccion, telefono);
@@ -24,14 +24,14 @@ public class Controller {
         System.out.println("Proveedor registrado.");
     }
 
-    public void registrarProducto(String nombre, double precioUnitario, int cantidadStock, int idProveedor) {
-        Producto producto = new Producto(nombre, precioUnitario, cantidadStock, idProveedor);
+    public void registrarProducto(int id, String nombre, double precioUnitario, int cantidadStock, int idProveedor) {
+        Producto producto = new Producto(id, nombre, precioUnitario, cantidadStock, idProveedor);
         productos.add(producto);
         System.out.println("Producto registrado.");
     }
 
     public void registrarSolicitudCompra(int idProveedor, int idProducto, int cantidad, double precioUnitario, Estado estado) {
-        int numeroSolicitud = solicitudesCompra.size() + 1; // Número automático
+        int numeroSolicitud = solicitudesCompra.size() + 1;
         SolicitudCompra solicitud = new SolicitudCompra(numeroSolicitud, idProveedor, idProducto, cantidad, precioUnitario, estado);
         solicitudesCompra.add(solicitud);
         System.out.println("Solicitud de compra registrada.");
