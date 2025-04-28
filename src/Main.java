@@ -38,7 +38,7 @@
                         double precioProducto = scanner.nextDouble();
                         System.out.println("Introduce la cantidad en stock del producto:");
                         int cantidadStock = scanner.nextInt();
-                        controller.registrarProducto(nombreProducto, precioProducto, cantidadStock, idProductoProveedor);
+                        controller.registrarProducto(idProductoProveedor, nombreProducto, precioProducto, cantidadStock, idProductoProveedor);
                         break;
                     case 3:
                         System.out.println("Introduce el ID del proveedor:");
